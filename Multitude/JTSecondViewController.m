@@ -2,11 +2,12 @@
 //  JTSecondViewController.m
 //  Multitude
 //
-//  Created by Jurvis Tan on 7/19/14.
+//  Created by Jurvis Tan on 7/18/14.
 //  Copyright (c) 2014 Jurvis Tan. All rights reserved.
 //
 
 #import "JTSecondViewController.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface JTSecondViewController ()
 
