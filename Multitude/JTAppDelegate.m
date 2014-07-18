@@ -12,7 +12,6 @@
 
 @interface JTAppDelegate() <CLLocationManagerDelegate>
 
-@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -21,6 +20,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSUUID *beaconUUID = [[NSUUID alloc] initWithUUIDString:@"2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"];
+    NSString *beaconIdentifier = @"Multitude";
+    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:
+                                    beaconUUID identifier:beaconIdentifier];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    // New iOS 8 request for Always Authorization, required for iBeacons to work!
+    self.locationManager.delegate = self;
+    self.locationManager.pausesLocationUpdatesAutomatically = NO;
+    
+    [self.locationManager startMonitoringForRegion:beaconRegion];
+    [self.locationManager startRangingBeaconsInRegion:beaconRegion];
+    [self.locationManager startUpdatingLocation];
+    
     [[UINavigationBar appearance] setTitleTextAttributes: @{
                                                             NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-DemiBold" size:18.0f],
                                                             }];
@@ -75,13 +88,55 @@
 	NSLog(@"Failed to get token, error: %@", error);
 }
 
-- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    if ([region isKindOfClass:[CLBeaconRegion class]]) {
-        UILocalNotification *notification = [[UILocalNotification alloc] init];
-        notification.alertBody = @"Are you forgetting something?";
-        notification.soundName = @"Default";
-        [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+-(void)sendLocalNotificationWithMessage:(NSString*)message {
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = message;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacons:
+(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
+    NSString *message = @"";
+
+    
+    if(beacons.count > 0) {
+        CLBeacon *nearestBeacon = beacons.firstObject;
+        if(nearestBeacon.proximity == self.lastProximity ||
+           nearestBeacon.proximity == CLProximityUnknown) {
+            return;
+        }
+        self.lastProximity = nearestBeacon.proximity;
+        switch(nearestBeacon.proximity) {
+            case CLProximityFar:
+                message = @"You are far away from the beacon";
+                break;
+            case CLProximityNear:
+                message = @"You are near the beacon";
+                break;
+            case CLProximityImmediate:
+                message = @"You are in the immediate proximity of the beacon";
+                break;
+            case CLProximityUnknown:
+                return;
+        }
+    } else {
+        message = @"No beacons are nearby";
     }
+    
+    NSLog(@"%@", message);
+    [self sendLocalNotificationWithMessage:message];
+}
+
+-(void)locationManager:(CLLocationManager *)manager
+         didExitRegion:(CLRegion *)region {
+    [manager stopRangingBeaconsInRegion:(CLBeaconRegion*)region];
+    [self.locationManager stopUpdatingLocation];
+    
+    NSLog(@"You exited the region.");
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = @"Hey there! So how was your commute?";
+    notification.soundName = @"Default";
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
 @end

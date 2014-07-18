@@ -50,13 +50,26 @@
     NSDictionary *parameters = @{@"action": @"add", @"feedback": @"1", @"station": @"fuck" };
     [manager POST:@"http://overpowered.cloudapp.net/index.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [hudLoading hide:YES afterDelay:0.1];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You!"
+                                                        message:@"Your good feedback is greatly appreciated, have a nice day!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        hudLoading.labelText = @"Connection Failed!";
+        [hudLoading hide:YES afterDelay:1];
     }];
     
 }
 
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger) buttonIndex{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
+}
 
 - (IBAction)returnToHome:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];

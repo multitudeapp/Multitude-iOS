@@ -27,7 +27,7 @@
 		28594DFA19799C85003A4DA2 /* JTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28594DF919799C85003A4DA2 /* JTTableViewController.m */; };
 		28594DFC1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28594DFB1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg */; };
 		28594DFF1979BA7F003A4DA2 /* JTInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28594DFE1979BA7F003A4DA2 /* JTInfoViewController.m */; };
-		28594E021979BEBE003A4DA2 /* JTItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28594E011979BEBE003A4DA2 /* JTItem.m */; };
+		28594E041979CBD5003A4DA2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28594E031979CBD5003A4DA2 /* CoreLocation.framework */; };
 		9C5502D0E39349659C27D7E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D10FB950E54E4222B391DBFA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +71,7 @@
 		28594DFB1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IntegrationofPlazaSingapura.jpg; sourceTree = "<group>"; };
 		28594DFD1979BA7F003A4DA2 /* JTInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTInfoViewController.h; sourceTree = "<group>"; };
 		28594DFE1979BA7F003A4DA2 /* JTInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTInfoViewController.m; sourceTree = "<group>"; };
-		28594E001979BEBE003A4DA2 /* JTItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTItem.h; sourceTree = "<group>"; };
-		28594E011979BEBE003A4DA2 /* JTItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTItem.m; sourceTree = "<group>"; };
+		28594E031979CBD5003A4DA2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		35A5B9E8F86B4229B226E7B1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D10FB950E54E4222B391DBFA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28594E041979CBD5003A4DA2 /* CoreLocation.framework in Frameworks */,
 				280B43BB19798D3100087ACB /* CoreGraphics.framework in Frameworks */,
 				280B43BD19798D3100087ACB /* UIKit.framework in Frameworks */,
 				280B43B919798D3100087ACB /* Foundation.framework in Frameworks */,
@@ -126,6 +126,7 @@
 		280B43B719798D3100087ACB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28594E031979CBD5003A4DA2 /* CoreLocation.framework */,
 				280B43B819798D3100087ACB /* Foundation.framework */,
 				280B43BA19798D3100087ACB /* CoreGraphics.framework */,
 				280B43BC19798D3100087ACB /* UIKit.framework */,
@@ -151,8 +152,6 @@
 				28594DF919799C85003A4DA2 /* JTTableViewController.m */,
 				28594DFD1979BA7F003A4DA2 /* JTInfoViewController.h */,
 				28594DFE1979BA7F003A4DA2 /* JTInfoViewController.m */,
-				28594E001979BEBE003A4DA2 /* JTItem.h */,
-				28594E011979BEBE003A4DA2 /* JTItem.m */,
 				280B43D319798D3100087ACB /* Images.xcassets */,
 				280B43BF19798D3100087ACB /* Supporting Files */,
 				28594DFB1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg */,
@@ -239,6 +238,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jurvis Tan";
 				TargetAttributes = {
+					280B43B419798D3100087ACB = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					280B43D819798D3100087ACB = {
 						TestTargetID = 280B43B419798D3100087ACB;
 					};
@@ -324,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28594E021979BEBE003A4DA2 /* JTItem.m in Sources */,
 				280B43CF19798D3100087ACB /* JTFirstViewController.m in Sources */,
 				28594DFA19799C85003A4DA2 /* JTTableViewController.m in Sources */,
 				280B43F719798DD600087ACB /* JTRateViewController.m in Sources */,

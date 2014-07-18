@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface JTAppDelegate : UIResponder <UIApplicationDelegate>
+@interface JTAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property CLProximity lastProximity;
 
 @end
