@@ -48,7 +48,7 @@
 - (IBAction)submitFeedback:(id)sender {
     NSString *feedback = [NSString stringWithString:self.textField.text];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"action": @"add", @"feedback": @"0", @"station": @"SMU", @"message":feedback};
+    NSDictionary *parameters = @{@"action": @"add", @"feedback": @"0", @"station": @"Bras Basah", @"message":feedback};
     [manager POST:@"http://overpowered.cloudapp.net/index.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         [self.navigationController popToRootViewControllerAnimated:YES];

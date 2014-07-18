@@ -15,7 +15,6 @@
 		280B43C919798D3100087ACB /* JTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 280B43C819798D3100087ACB /* JTAppDelegate.m */; };
 		280B43CC19798D3100087ACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280B43CA19798D3100087ACB /* Main.storyboard */; };
 		280B43CF19798D3100087ACB /* JTFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280B43CE19798D3100087ACB /* JTFirstViewController.m */; };
-		280B43D219798D3100087ACB /* JTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280B43D119798D3100087ACB /* JTSecondViewController.m */; };
 		280B43D419798D3100087ACB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280B43D319798D3100087ACB /* Images.xcassets */; };
 		280B43DB19798D3100087ACB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280B43DA19798D3100087ACB /* XCTest.framework */; };
 		280B43DC19798D3100087ACB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280B43B819798D3100087ACB /* Foundation.framework */; };
@@ -25,6 +24,10 @@
 		280B43F119798D3E00087ACB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 280B43F019798D3E00087ACB /* Podfile */; };
 		280B43F619798DD600087ACB /* JTFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280B43F319798DD600087ACB /* JTFeedbackViewController.m */; };
 		280B43F719798DD600087ACB /* JTRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280B43F519798DD600087ACB /* JTRateViewController.m */; };
+		28594DFA19799C85003A4DA2 /* JTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28594DF919799C85003A4DA2 /* JTTableViewController.m */; };
+		28594DFC1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28594DFB1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg */; };
+		28594DFF1979BA7F003A4DA2 /* JTInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28594DFE1979BA7F003A4DA2 /* JTInfoViewController.m */; };
+		28594E021979BEBE003A4DA2 /* JTItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28594E011979BEBE003A4DA2 /* JTItem.m */; };
 		9C5502D0E39349659C27D7E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D10FB950E54E4222B391DBFA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +55,6 @@
 		280B43CB19798D3100087ACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		280B43CD19798D3100087ACB /* JTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTFirstViewController.h; sourceTree = "<group>"; };
 		280B43CE19798D3100087ACB /* JTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTFirstViewController.m; sourceTree = "<group>"; };
-		280B43D019798D3100087ACB /* JTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTSecondViewController.h; sourceTree = "<group>"; };
-		280B43D119798D3100087ACB /* JTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTSecondViewController.m; sourceTree = "<group>"; };
 		280B43D319798D3100087ACB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		280B43D919798D3100087ACB /* MultitudeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultitudeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		280B43DA19798D3100087ACB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -65,6 +66,13 @@
 		280B43F319798DD600087ACB /* JTFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTFeedbackViewController.m; sourceTree = "<group>"; };
 		280B43F419798DD600087ACB /* JTRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRateViewController.h; sourceTree = "<group>"; };
 		280B43F519798DD600087ACB /* JTRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRateViewController.m; sourceTree = "<group>"; };
+		28594DF819799C85003A4DA2 /* JTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTableViewController.h; sourceTree = "<group>"; };
+		28594DF919799C85003A4DA2 /* JTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTableViewController.m; sourceTree = "<group>"; };
+		28594DFB1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IntegrationofPlazaSingapura.jpg; sourceTree = "<group>"; };
+		28594DFD1979BA7F003A4DA2 /* JTInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTInfoViewController.h; sourceTree = "<group>"; };
+		28594DFE1979BA7F003A4DA2 /* JTInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTInfoViewController.m; sourceTree = "<group>"; };
+		28594E001979BEBE003A4DA2 /* JTItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTItem.h; sourceTree = "<group>"; };
+		28594E011979BEBE003A4DA2 /* JTItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTItem.m; sourceTree = "<group>"; };
 		35A5B9E8F86B4229B226E7B1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D10FB950E54E4222B391DBFA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,19 +138,24 @@
 		280B43BE19798D3100087ACB /* Multitude */ = {
 			isa = PBXGroup;
 			children = (
-				280B43F219798DD600087ACB /* JTFeedbackViewController.h */,
-				280B43F319798DD600087ACB /* JTFeedbackViewController.m */,
-				280B43F419798DD600087ACB /* JTRateViewController.h */,
-				280B43F519798DD600087ACB /* JTRateViewController.m */,
 				280B43C719798D3100087ACB /* JTAppDelegate.h */,
 				280B43C819798D3100087ACB /* JTAppDelegate.m */,
-				280B43CA19798D3100087ACB /* Main.storyboard */,
 				280B43CD19798D3100087ACB /* JTFirstViewController.h */,
 				280B43CE19798D3100087ACB /* JTFirstViewController.m */,
-				280B43D019798D3100087ACB /* JTSecondViewController.h */,
-				280B43D119798D3100087ACB /* JTSecondViewController.m */,
+				280B43F419798DD600087ACB /* JTRateViewController.h */,
+				280B43F519798DD600087ACB /* JTRateViewController.m */,
+				280B43F219798DD600087ACB /* JTFeedbackViewController.h */,
+				280B43F319798DD600087ACB /* JTFeedbackViewController.m */,
+				280B43CA19798D3100087ACB /* Main.storyboard */,
+				28594DF819799C85003A4DA2 /* JTTableViewController.h */,
+				28594DF919799C85003A4DA2 /* JTTableViewController.m */,
+				28594DFD1979BA7F003A4DA2 /* JTInfoViewController.h */,
+				28594DFE1979BA7F003A4DA2 /* JTInfoViewController.m */,
+				28594E001979BEBE003A4DA2 /* JTItem.h */,
+				28594E011979BEBE003A4DA2 /* JTItem.m */,
 				280B43D319798D3100087ACB /* Images.xcassets */,
 				280B43BF19798D3100087ACB /* Supporting Files */,
+				28594DFB1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg */,
 			);
 			path = Multitude;
 			sourceTree = "<group>";
@@ -257,6 +270,7 @@
 			files = (
 				280B43D419798D3100087ACB /* Images.xcassets in Resources */,
 				280B43C319798D3100087ACB /* InfoPlist.strings in Resources */,
+				28594DFC1979BA3E003A4DA2 /* IntegrationofPlazaSingapura.jpg in Resources */,
 				280B43F119798D3E00087ACB /* Podfile in Resources */,
 				280B43CC19798D3100087ACB /* Main.storyboard in Resources */,
 			);
@@ -310,9 +324,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280B43D219798D3100087ACB /* JTSecondViewController.m in Sources */,
+				28594E021979BEBE003A4DA2 /* JTItem.m in Sources */,
 				280B43CF19798D3100087ACB /* JTFirstViewController.m in Sources */,
+				28594DFA19799C85003A4DA2 /* JTTableViewController.m in Sources */,
 				280B43F719798DD600087ACB /* JTRateViewController.m in Sources */,
+				28594DFF1979BA7F003A4DA2 /* JTInfoViewController.m in Sources */,
 				280B43C919798D3100087ACB /* JTAppDelegate.m in Sources */,
 				280B43F619798DD600087ACB /* JTFeedbackViewController.m in Sources */,
 				280B43C519798D3100087ACB /* main.m in Sources */,

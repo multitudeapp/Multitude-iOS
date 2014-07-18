@@ -9,6 +9,7 @@
 #import "JTRateViewController.h"
 #import "JTFeedbackViewController.h"
 #import <AFNetworking/AFNetworking.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface JTRateViewController ()
 
@@ -40,25 +41,22 @@
 */
 
 - (IBAction)didEnjoyRide:(id)sender {
+    MBProgressHUD *hudLoading = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hudLoading.mode = MBProgressHUDModeIndeterminate;
+    hudLoading.labelText = @"Submitting Your Feedback...";
+    [hudLoading show:YES];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"action": @"add", @"feedback": @"1", @"station": @"fuck" };
     [manager POST:@"http://overpowered.cloudapp.net/index.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        [self.navigationController popToRootViewControllerAnimated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
     
 }
 
-- (IBAction)didNotEnjoyRide:(id)sender {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"action": @"add", @"feedback": @"0", @"station": @"fuck" };
-    [manager POST:@"http://overpowered.cloudapp.net/index.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
 
 - (IBAction)returnToHome:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];

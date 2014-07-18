@@ -10,7 +10,6 @@
 
 @interface JTRateViewController : UIViewController
 - (IBAction)didEnjoyRide:(id)sender;
-- (IBAction)didNotEnjoyRide:(id)sender;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *returnToHome;
+- (IBAction)returnToHome:(id)sender;
 
 @end
