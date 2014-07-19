@@ -48,7 +48,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"action": @"add", @"feedback": @"1", @"station": @"fuck" };
-    [manager POST:@"http://overpowered.cloudapp.net/index.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://overpoweredbk.cloudapp.net/index.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         [hudLoading hide:YES afterDelay:0.1];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You!"

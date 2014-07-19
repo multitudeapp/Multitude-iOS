@@ -43,7 +43,7 @@
     return YES;
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(NSDictionary *)userInfo{
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotification" object:nil userInfo:userInfo];
 }
 
@@ -93,38 +93,6 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
--(void)locationManager:(CLLocationManager *)manager didRangeBeacons:
-(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    NSString *message = @"";
-
-    
-    if(beacons.count > 0) {
-        CLBeacon *nearestBeacon = beacons.firstObject;
-        if(nearestBeacon.proximity == self.lastProximity ||
-           nearestBeacon.proximity == CLProximityUnknown) {
-            return;
-        }
-        self.lastProximity = nearestBeacon.proximity;
-        switch(nearestBeacon.proximity) {
-            case CLProximityFar:
-                message = @"You are far away from the beacon";
-                break;
-            case CLProximityNear:
-                message = @"You are near the beacon";
-                break;
-            case CLProximityImmediate:
-                message = @"You are in the immediate proximity of the beacon";
-                break;
-            case CLProximityUnknown:
-                return;
-        }
-    } else {
-        message = @"No beacons are nearby";
-    }
-    
-    NSLog(@"%@", message);
-    [self sendLocalNotificationWithMessage:message];
-}
 
 -(void)locationManager:(CLLocationManager *)manager
          didExitRegion:(CLRegion *)region {

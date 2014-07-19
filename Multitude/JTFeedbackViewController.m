@@ -55,7 +55,7 @@
     NSString *feedback = [NSString stringWithString:self.textField.text];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"action": @"add", @"feedback": @"0", @"station": @"Bras Basah", @"message":feedback};
-    [manager POST:@"http://overpowered.cloudapp.net/index.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://overpoweredbk.cloudapp.net/index.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         [hudLoading hide:YES afterDelay:0.1];
         
